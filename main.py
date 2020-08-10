@@ -47,7 +47,7 @@ def start_game(quotes):
     remaining_guesses = 4
 
     print(colored("Here's a quote: ", color='green'))
-    print(colored(quote["text"], color='grey'))
+    print(colored(quote["text"], color='white'))
     guess = ''
 
     # Loop breaks when guess equals author name or remaining guesses reaches zero
@@ -72,18 +72,18 @@ def start_game(quotes):
             birth_date = soup.find(class_="author-born-date").get_text()
             birth_place = soup.find(class_="author-born-location").get_text()
             print(
-                colored(f"\nHere's a hint: The author was born on {birth_date} {birth_place}", color='grey'))
+                colored(f"\nHere's a hint: The author was born on {birth_date} {birth_place}", color='white'))
 
         # Third Hint
         elif remaining_guesses == 2:
             print(colored(
-                f"\nHere's a hint: The author's first name {quote['author'][0]}", color="grey"))
+                f"\nHere's a hint: The author's first name {quote['author'][0]}", color="white"))
 
         # Fourth Hint
         elif remaining_guesses == 1:
             last_initial = quote["author"].split(" ")[1][0]
             print(colored(
-                f"\nHere's a hint: The author's last name {last_initial}", color="grey"))
+                f"\nHere's a hint: The author's last name {last_initial}", color="white"))
 
         # No More Hints Left
         else:
