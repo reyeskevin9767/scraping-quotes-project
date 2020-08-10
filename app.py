@@ -16,7 +16,7 @@ BASE_URL = 'http://quotes.toscrape.com'
 
 def scrape_quotes():
     all_quotes = []
-    url = "/page/9"
+    url = "/page/1"
 
     # Loop through the each page of the website
     while url:
@@ -35,7 +35,7 @@ def scrape_quotes():
         # Check to see if there are any remaining pages
         next_btn = soup.find(class_="next")
         url = next_btn.find("a")['href'] if next_btn else None
-        # sleep(2)
+        sleep(2)
     return all_quotes
 
 
